@@ -1,5 +1,5 @@
-matplotlib==3.7.1
-pandas==1.4.4
-streamlit==1.25.0
-streamlit_option_menu==0.3.2
-yfinance==0.2.17
+matplotlib
+pandas
+streamlit
+streamlit_option_menu
+yfinance
