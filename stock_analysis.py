@@ -42,11 +42,11 @@ def analyze_macd(ticker):
     below_zero = macd[-1] < 0 and signal[-1] < 0
 
     if below_zero and close_to_intersection:
-        st.warning(f"For {ticker}, both MACD and Signal lines are below zero and close to intersection. This might be a buy call.")
+        st.success(f"For {ticker}, both MACD and Signal lines are below zero and close to intersection. This might be a buy call.")
         
         st.pyplot(plot_macd(macd, signal, hist))
     else:
-        st.sucess(f"For {ticker}, conditions for a buy call are not met.",icon='😓')
+        st.warning(f"For {ticker}, conditions for a buy call are not met.",icon='😓')
         
 
 def main():
@@ -92,7 +92,7 @@ def main():
                             symbol = symbol + ".NS"
                             analyze_macd(symbol)
                             my_bar.progress(percent_complete + 1, text=progress_text)
-    if selected=="Interected one":
+    if selected=="Intersected one":
         st.title("MACD Intersection Checker for Nifty200 stocks")
         interection_days = st.number_input("Enter number of intersection days:",1)
         end_date = st.date_input("Enter the end date:", datetime.date.today())
@@ -160,7 +160,7 @@ def main():
                         url =f"https://in.tradingview.com/chart/my9CG1Nl/?symbol=NSE%3A{symbol1}" 
                         st.write(url)
                     else:
-                         st.toast("Done",icon= "✅")
+                         st.success("Done",icon= "✅")
     
                     st.write(f"There is an intersection for {symbol1}")
                     chart_data = pd.DataFrame({
@@ -173,7 +173,7 @@ def main():
                         st.write("Open Price:", intersection['Open'])
                         st.write("Close Price:", intersection['Close'])
                 else:
-                    st.sucess(f"There is no intersection for {symbol1}",icon="😭")
+                    st.warning(f"There is no intersection for {symbol1}",icon="😭")
             
                 
             
