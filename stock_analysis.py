@@ -46,7 +46,7 @@ def analyze_macd(ticker):
         
         st.pyplot(plot_macd(macd, signal, hist))
     else:
-        st.toast(f"For {ticker}, conditions for a buy call are not met.",icon='😓')
+        st.sucess(f"For {ticker}, conditions for a buy call are not met.",icon='😓')
         
 
 def main():
@@ -173,7 +173,7 @@ def main():
                         st.write("Open Price:", intersection['Open'])
                         st.write("Close Price:", intersection['Close'])
                 else:
-                    st.toast(f"There is no intersection for {symbol1}",icon="😭")
+                    st.sucess(f"There is no intersection for {symbol1}",icon="😭")
             
                 
             
