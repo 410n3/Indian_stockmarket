@@ -1,5 +1,5 @@
 matplotlib
 pandas
-streamlit=1.25.0
+streamlit==1.25.0
 streamlit_option_menu
 yfinance
